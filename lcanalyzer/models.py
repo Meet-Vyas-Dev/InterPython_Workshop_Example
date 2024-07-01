@@ -37,3 +37,13 @@ def min_mag(data,mag_col):
     :returns: The min value of the column.
     """
     return data[mag_col].min()
+
+def normalize_lc(df,mag_col):
+    # Normalize a light curve
+    if any(df[mag_col].abs() > 90):
+        raise ValueError(mag_col+' contains values with abs() larger than 90!')
+    min = min_mag(df,mag_col)
+    max = max_mag((df-min),mag_col)
+    lc = (df[mag_col]-min)/max
+    lc = lc.fillna(0)
+    return lc
