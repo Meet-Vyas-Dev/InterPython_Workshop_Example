@@ -46,5 +46,3 @@ jobs:
       run: |
           python3 -m nbqa pylint --fail-under=0 light-curve-analysis.ipynb --disable=C0114
 
-...
-
