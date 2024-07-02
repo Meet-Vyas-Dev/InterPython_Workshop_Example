@@ -39,7 +39,7 @@ jobs:
 
     - name: Check .py style with Pylint
       run: |
-        python3 -m pylint --fail-under=0 --reports=y lcanalyzer
+        python3 -m pylint --reports=y lcanalyzer
         pylint --ignore=*.bin,*.exe,*.dll,*.png,*.jpg lcanalyzer
   
     - name: Check .ipynb style with Pylint
