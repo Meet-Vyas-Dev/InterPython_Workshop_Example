@@ -5,7 +5,7 @@ import pandas as pd
 import pytest
 
 def test_max_mag_integers():
-    # Test that max_mag function works for integers
+    """Test that max_mag function works for integers"""
     from lcanalyzer.models import max_mag
 
     test_df = pd.DataFrame(data=[[1, 5, 3], 
@@ -17,7 +17,7 @@ def test_max_mag_integers():
     assert max_mag(test_df, test_colname) == test_output
 
 def test_max_mag_zeros():
-    # Test that max_mag function works for zeros
+    """Test that max_mag function works for zeros"""
     from lcanalyzer.models import max_mag
 
     test_df = pd.DataFrame(data=[[0, 0, 0], 
@@ -29,7 +29,7 @@ def test_max_mag_zeros():
     assert max_mag(test_df, test_colname) == test_output
 
 def test_min_mag_negatives():
-    # Test that min_mag function works for negatives
+    """Test that min_mag function works for negatives"""
     from lcanalyzer.models import min_mag
 
     test_df = pd.DataFrame(data=[[-7, -7, -3], [-4, -3, -1], [-1, -5, -3]], columns=list("abc"))
@@ -39,7 +39,7 @@ def test_min_mag_negatives():
     assert min_mag(test_df, test_colname) == test_output
 
 def test_mean_mag_integers():
-    # Test that mean_mag function works for negatives
+    """Test that mean_mag function works for negatives"""
     from lcanalyzer.models import mean_mag
 
     test_df = pd.DataFrame(data=[[-7, -7, -3], [-4, -3, -1], [-1, -5, -3]], columns=list("abc"))
